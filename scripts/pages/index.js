@@ -1,6 +1,10 @@
-    async function getPhotographers() {
+
+
+     async function getPhotographers() {
         // Penser à remplacer par les données récupérées dans le json
-        const photographers = [
+        const datasPhotographers = await loadDatasPhotographers(); 
+        console.log("donnees photographes ",datasPhotographers);
+        /*const photographers = [
             {
                 "name": "Ma data test",
                 "id": 1,
@@ -22,24 +26,33 @@
         ]
         // et bien retourner le tableau photographers seulement une fois
         return ({
-            photographers: [...photographers, ...photographers, ...photographers]})
+            photographers: [...photographers, ...photographers, ...photographers]})*/
+        return datasPhotographers;
     }
 
-    async function displayData(photographers) {
+    function displayData(datasPhotographers) {
         const photographersSection = document.querySelector(".photographer_section");
+        const daaa =  datasPhotographers;
+        //console.log("lklklklk", datasPhotographers);
+        //console.log("aaaa", daaa);
 
-        photographers.forEach((photographer) => {
-            const photographerModel = photographerFactory(photographer);
-            const userCardDOM = photographerModel.getUserCardDOM();
+        datasPhotographers.forEach((photographer) => {
+            console.log("ytru",photographer);
+            const ClassPhotographer = new Photographer (photographer);
+            console.log(ClassPhotographer);
+            const photographerModel = ClassPhotographer.photographerFactory();
+            const userCardDOM = ClassPhotographer.photographerFactory();
             photographersSection.appendChild(userCardDOM);
         });
     };
 
     async function init() {
         // Récupère les datas des photographes
-        const { photographers } = await getPhotographers();
+        const photographers = await loadDatasPhotographers();
+        console.table(photographers);
         displayData(photographers);
     };
     
     init();
+    
     

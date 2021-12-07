@@ -19,6 +19,23 @@ h1 {
     margin-right: 100px;
 }
 
+article>a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+figcaption {
+    text-align: center;
+}
+
+figcaption>p {
+    color:black;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
 .logo {
     height: 50px;
     margin-left: 100px;
@@ -42,9 +59,19 @@ h1 {
 .photographer_section article h2 {
     color: #D3573C;
     font-size: 36px;
+    margin-bottom: 5px;
 }
 
 .photographer_section article img {
+    border-radius: 50%;
     height: 200px;
     width: 200px;
+}
+
+.p_city {
+    color : #D3573C;
+}
+
+.p_price {
+    color:grey;
 }

@@ -1,0 +1,18 @@
+structure carte photographe :
+
+<article>
+    
+    <figure>
+    <a>
+        <img src="jpg" alt="img">
+        <h2>Nom photographe</h2>
+</a>
+        <figcaption>
+            
+            <p>city</p>
+            <p>tagline</p>
+            <p>price</p>
+        </figcaption>
+    </figure>
+    </a>
+</article>
