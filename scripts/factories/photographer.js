@@ -48,6 +48,18 @@ class Photographer {
  //       return { name, picture, getUserCardDOM }
     }
 
+    photographerPage(){
+        const h2_photo = document.getElementById("identity_photographer");
+        h2_photo.textContent = this.name;
+        const locationPhotographer = document.getElementById("location_photographer");
+        locationPhotographer.textContent = this.city+", "+this.country;
+        const tag_line = document.getElementById("tag_photographer");
+        tag_line.textContent = this.tagline;
+        const picture = `assets/Sample_Photos/Photographers_ID_Photos/${this.portrait}`;
+        const img_photo = document.getElementById("photo_photographer");
+        img_photo.setAttribute("src", picture);
+
+    }
 
 }
 
