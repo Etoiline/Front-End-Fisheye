@@ -6,7 +6,7 @@ structure carte photographe :
     <a>
         <img src="jpg" alt="img">
         <h2>Nom photographe</h2>
-</a>
+    </a>
         <figcaption>
             
             <p>city</p>
@@ -14,5 +14,21 @@ structure carte photographe :
             <p>price</p>
         </figcaption>
     </figure>
-    </a>
 </article>
+
+
+
+
+Structure medias :
+<figure>
+    <a>
+        <img src="jpg" alt="img">
+    </a>
+    <figcaption>        
+        <p>title</p>
+        <div>
+            <p>nb_like</p>
+            <i>logo_heart</i>
+        </div>
+    </figcaption>
+</figure>

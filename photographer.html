@@ -3,6 +3,7 @@
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
+    <script src="https://kit.fontawesome.com/706f764c79.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <title>Fisheye - photographe </title>
@@ -24,6 +25,25 @@
           <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
         </div>
         <img src="#" alt ="photo photographer" id="photo_photographer" class="photo_photographer">
+      </div>
+      <div class="photograph-media">
+        <div class="photograph-media__tri">
+          <p>Trier par</p>
+          <div id="sort-wrapper">
+              <p class="tri-btn">Popularité</p>
+              <span class="fas fa-chevron-down arrow-open"></span>
+              <ul class="menu-tri">
+                  <li>Popularité <span class="fas fa-chevron-up arrow-close"></span>
+                  </li>
+                  <li>Date</li>
+                  <li>Titre</li>
+              </ul>
+          </div>
+        </div>
+        <div class="photograph-media__photos">
+
+        </div>
+
       </div>
     </main>
     <div id="contact_modal">
@@ -55,6 +75,8 @@
 		</div>
     <script src="scripts/utils/dataProvider.js"></script>
     <script src="scripts/factories/photographer.js"></script>
+    <script src="scripts/factories/mediaImage.js"></script>
+    <script src="scripts/factories/media.js"></script>
     <script src="scripts/pages/photographer.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
   </body>

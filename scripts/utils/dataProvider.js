@@ -20,10 +20,7 @@ const fetchData = async(urlDataPhotographers) => {
 //retourne les photographes
 const loadDatasPhotographers = async() => {
     const datas = await fetchData (urlDataPhotographers);
-    //console.log("datas : ", datas);
     var photographersData = datas.photographers;
-    //console.log ("data photographers", photographersData);
-    //console.log ("data media", mediaData);
     return photographersData;
 }
 
@@ -45,6 +42,6 @@ const loadMediaPhotographers = async() => {
 //retourne les medias d'un photographe (id en paramètre)
 const loadMediaPhotographer = async(id) => {
     const datas = await loadMediaPhotographers ();
-    const photographerMedia = datas.find (function(mediaPhotographerId) {return mediaPhotographerId.id==id; } );
+    const photographerMedia = datas.filter (function(mediaPhotographerId) {return mediaPhotographerId.photographerId==id; } );
     return photographerMedia;
 }

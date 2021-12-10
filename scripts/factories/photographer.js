@@ -39,10 +39,10 @@ class Photographer {
             figcaption.appendChild(p_tagline);
             figcaption.appendChild(p_price);
             figure.appendChild(a);
+            figure.appendChild(figcaption);
             a.appendChild(img);
             a.appendChild(h2);
-            article.appendChild(a);
-            article.appendChild(figcaption);
+            article.appendChild(figure);
             return article;
   //      }
  //       return { name, picture, getUserCardDOM }

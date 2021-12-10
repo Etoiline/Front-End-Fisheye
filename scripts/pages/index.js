@@ -32,13 +32,10 @@
 
     function displayData(datasPhotographers) {
         const photographersSection = document.querySelector(".photographer_section");
-        const daaa =  datasPhotographers;
 
         datasPhotographers.forEach((photographer) => {
-            console.log("ytru",photographer);
             const ClassPhotographer = new Photographer (photographer);
             console.log(ClassPhotographer);
-            const photographerModel = ClassPhotographer.photographerFactory();
             const userCardDOM = ClassPhotographer.photographerFactory();
             photographersSection.appendChild(userCardDOM);
         });
