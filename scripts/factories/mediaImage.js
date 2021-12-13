@@ -13,7 +13,7 @@ class MediaImage {
     /**
      * crée et retourne la figure contenant l'image
      */
-    imageFactory() {
+    mediaFactory() {
         console.log('name', this.photographerFirstName);
         const picture = `assets/Sample_Photos/${this.photographerFirstName}/${this.image}`;
         const figure = document.createElement( 'figure' );

@@ -12,7 +12,7 @@ class MediaVideo {
     /**
      * crée et retourne la figure contenant la video
      */
-    videoFactory() {
+     mediaFactory() {
         console.log('name', this.photographerFirstName);
         const picture = `assets/Sample_Photos/${this.photographerFirstName}/${this.video}`;
         const figure = document.createElement( 'figure' );
@@ -20,7 +20,7 @@ class MediaVideo {
         //a.href=ouvrir l'image dans la lightbox
         const video = document.createElement( 'video' );
         video.setAttribute("src", picture);
-        video.setAttribute("controls");
+        video.setAttribute("controls", "controls");
         video.setAttribute("alt", 'vidéo');
         a.appendChild(video);
         const figcaption = document.createElement( 'figcaption' );

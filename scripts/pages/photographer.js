@@ -19,8 +19,15 @@ async function displayMedias (photographerFirstName) {
     medias = await returnMediaPhotographer();
     console.log('preeeenom',photographerFirstName);
     medias.forEach((media) => {
-        const mediaFigure = new Media (media, 'image', photographerFirstName);
-        const mediaFigureHTML = mediaFigure.imageFactory();
+        var typeMedia = '';
+        if (media.image) {
+            typeMedia = 'image'
+        }
+        else {
+            typeMedia = 'video'
+        }
+        const mediaFigure = new Media (media, typeMedia, photographerFirstName);
+        const mediaFigureHTML = mediaFigure.mediaFactory();
         div_media.appendChild(mediaFigureHTML);
 
     });

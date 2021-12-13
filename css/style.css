@@ -198,6 +198,11 @@ figcaption>p {
             height:300px
     }
 
+    .photograph-media__photos video {
+        width: 100%;
+        height:300px
+}
+
     .photograph-media__photos figcaption {
         display : flex;
         justify-content: space-between;
