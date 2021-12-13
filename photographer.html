@@ -52,7 +52,7 @@
           <h2>Contactez-moi</h2>
           <img src="assets/icons/close.svg" alt="close_icon" onclick="closeModal()" />
         </header>
-				<form name="contact_form" action='index.html' method='get' onsubmit="return validate(event);" >
+				<form id="contact_form" name="contact_form" action='index.html' method='get' onsubmit="return validate(event);" >
 					<div class='formData'>
 						<label for="first">Prénom</label><br>
                 <input class="text-control" type="text" id="first" name="first"/><br>
@@ -67,15 +67,25 @@
           </div>
           <div class="formData">
             <label for="message">Votre message</label><br>
-            <input class="text-control" type="text" id="message" name="message"/><br>
+            <textarea id="message"></textarea> <br>
           </div>
           <button class="contact_button" type='submit'>Envoyer</button>
 				</form>
 			</div>
 		</div>
+    <div class="bground-validation">
+      <div class="content">
+        <img src="assets/icons/close.svg" alt="close_icon" class="close-icon" onclick="closeModalValidation()" />
+        <div class="modal-body">
+            <p>Merci votre message a bien été transmis</p>
+            <button class="contact_button" type='submit' onclick='modalValidate()'>Fermer</button>
+          </div>
+      </div>
+    </div>
     <script src="scripts/utils/dataProvider.js"></script>
     <script src="scripts/factories/photographer.js"></script>
     <script src="scripts/factories/mediaImage.js"></script>
+    <script src="scripts/factories/mediaVideo.js"></script>
     <script src="scripts/factories/media.js"></script>
     <script src="scripts/pages/photographer.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>

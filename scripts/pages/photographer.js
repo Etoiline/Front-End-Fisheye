@@ -26,30 +26,17 @@ async function displayMedias (photographerFirstName) {
     });
 }
 
-
-
-
-async function init(){
-    //Partie description du photographe
-    const dataPhotographer = await returnDataPhotographer();
-    const ClassPhotographer = new Photographer (dataPhotographer);
-    ClassPhotographer.photographerPage();
-
-    //Partie Medias
-    const photographerFirstName = ClassPhotographer.name.split(' ')[0];
-    displayMedias(photographerFirstName);
-
-}
-
 function dropDown() {
-    let arrowOpen = document.getElementsByClassName('arrow-open');
-    let arrowClose = document.getElementsByClassName('arrow-close');
-    let menuTri = document.getElementsByClassName('menu-tri');
+    const arrowOpen = document.getElementsByClassName('arrow-open');
+    const arrowClose = document.getElementsByClassName('arrow-close');
+    const menuTri = document.getElementsByClassName('menu-tri');
+    const triBtn = document.getElementsByClassName('tri-btn');
     console.log(arrowOpen);
 
     if (arrowOpen) {
         arrowOpen[0].addEventListener('click', () => {
             menuTri[0].style.display = 'block';
+            //triBtn[0].style.display = 'none';
         });
     }
     if (arrowClose) {
@@ -61,7 +48,22 @@ function dropDown() {
 
 
 
+async function init(){
+    //Partie description du photographe
+    const dataPhotographer = await returnDataPhotographer();
+    const ClassPhotographer = new Photographer (dataPhotographer);
+    ClassPhotographer.photographerPage();
+
+    //partie tri des medias
+    dropDown();
+
+    //Partie Medias
+    const photographerFirstName = ClassPhotographer.name.split(' ')[0];
+    displayMedias(photographerFirstName);
+
+}
+
+
+
 console.log(id);    
 init();
-dropDown();
-displayMedias();
