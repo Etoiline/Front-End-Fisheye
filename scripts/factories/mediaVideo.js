@@ -3,6 +3,7 @@ class MediaVideo {
         this.id = dataVideo.id
         this.photographerId = dataVideo.photographerId
         this.video = dataVideo.video
+        this.title = dataVideo.video
         this.likes = dataVideo.likes
         this.date = dataVideo.date
         this.price = dataVideo.price

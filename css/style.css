@@ -170,7 +170,8 @@ figcaption>p {
     }
 
     ul.menu-tri li:hover {
-        background-color: #901C1C;
+        background-color: #D3573C;
+        color:#fff;
         cursor: pointer;
     }
 
