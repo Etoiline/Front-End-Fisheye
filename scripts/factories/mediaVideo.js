@@ -4,7 +4,7 @@ class MediaVideo {
     this.id = dataVideo.id
     this.photographerId = dataVideo.photographerId
     this.video = dataVideo.video
-    this.title = dataVideo.video
+    this.title = (dataVideo.video).replaceAll('_', ' ').slice(0, -4)
     this.likes = dataVideo.likes
     this.date = dataVideo.date
     this.price = dataVideo.price
@@ -27,7 +27,7 @@ class MediaVideo {
     a.appendChild(video)
     const figcaption = document.createElement('figcaption')
     const pTitle = document.createElement('p')
-    pTitle.textContent = 'Vidéo'
+    pTitle.textContent = this.title
     const divLike = document.createElement('div')
     const pLike = document.createElement('p')
     pLike.textContent = this.likes

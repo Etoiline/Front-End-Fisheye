@@ -3,6 +3,7 @@ const id = urlSearchParam.get('id');
 let medias = [];
 let dataPhotographer = null;
 let photographerFirstName = null;
+let mediasObject = [];
 
 async function returnDataPhotographer () {
     const photographer = await loadDataPhotographer(id);
@@ -12,11 +13,22 @@ async function returnDataPhotographer () {
 
 async function returnMediaPhotographer () {
     medias = await loadMediaPhotographer(id);
+    medias.forEach((media) => {
+        let typeMedia = '';
+        if (media.image) {
+            typeMedia = 'image'
+        }
+        else {
+            typeMedia = 'video'
+        }
+        const mediaClass = new Media (media, typeMedia, photographerFirstName);
+        mediasObject.push(mediaClass);
+    });
 } 
 
 
 function triMediaPopularite (){
-    const sortedMedias= medias.sort(function compare(a, b) {
+    const sortedMedias= mediasObject.sort(function compare(a, b) {
         if (a.likes > b.likes)
            return -1;
         if (a.likes < b.likes )
@@ -28,7 +40,7 @@ function triMediaPopularite (){
 }
 
 function triMediaTitre (){
-    const sortedMedias= medias.sort(function compare(a, b) {
+    const sortedMedias= mediasObject.sort(function compare(a, b) {
         if (a.title < b.title)
            return -1;
         if (a.title > b.title )
@@ -36,10 +48,11 @@ function triMediaTitre (){
         return 0;
       });
       displayMedias(sortedMedias);
+      console.table(sortedMedias);
 }
 
 function triMedaiDate(){
-    const sortedMedias= medias.sort(function compare(a, b) {
+    const sortedMedias= mediasObject.sort(function compare(a, b) {
         if (a.date > b.date)
            return -1;
         if (a.date < b.date )
@@ -103,26 +116,26 @@ async function displayMedias (sortedMedias) {
 
 
 /* Déroule le menu pour choisir le tri */
-function dropDown() {
-    const arrowOpen = document.getElementsByClassName('arrow-open');
-    const arrowClose = document.getElementsByClassName('arrow-close');
-    const menuTri = document.getElementsByClassName('menu-tri');
+// function dropDown() {
+//     const arrowOpen = document.getElementsByClassName('arrow-open');
+//     const arrowClose = document.getElementsByClassName('arrow-close');
+//     const menuTri = document.getElementsByClassName('menu-tri');
 
-    if (arrowOpen) {
-        arrowOpen[0].addEventListener('click', () => {
-            menuTri[0].style.display = 'block';
-        });
-    }
-    if (arrowClose) {
-        arrowClose[0].addEventListener('click', () => {
-            menuTri[0].style.display = "none";
-        });
-    }
-}
+//     if (arrowOpen) {
+//         arrowOpen[0].addEventListener('click', () => {
+//             menuTri[0].style.display = 'block';
+//         });
+//     }
+//     if (arrowClose) {
+//         arrowClose[0].addEventListener('click', () => {
+//             menuTri[0].style.display = "none";
+//         });
+//     }
+//}
 
 
 /* Récupère le choix de tri de l'utilisateur */
-function parametreTri(){
+/*function parametreTri() {
     const popularity = document.getElementsByClassName('popularity-sort');
     const date = document.getElementsByClassName('date-sort');
     const title = document.getElementsByClassName('title-sort');
@@ -135,7 +148,7 @@ function parametreTri(){
         sortParam = 'date';
         console.log('tri date', sortParam);
         return sortParam;
-        
+
     });
     title[0].addEventListener('click', () => {
         sortParam = 'title';
@@ -143,14 +156,13 @@ function parametreTri(){
     });
     console.log('tri retour', sortParam);
     return sortParam;
-}
+}*/
 
 function select (){
     const select = document.getElementById('select-tri');
     select.addEventListener('change', (e) => {
         console.log(e.target.value);
         triMedia(e.target.value);
-
     });
 }
 
@@ -166,7 +178,7 @@ async function init(){
     //partie tri des medias
     //tri = parametreTri();
     //console.log('tri',tri);
-    dropDown();
+    //dropDown();
 
     //Partie Medias
     await returnMediaPhotographer();
