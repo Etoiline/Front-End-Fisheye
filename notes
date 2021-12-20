@@ -32,3 +32,13 @@ Structure medias :
         </div>
     </figcaption>
 </figure>
+
+
+
+
+Structure tri
+<div class="select-selected">popularite</div>
+<div class="select-items select-hide">
+    <div>Date</div>
+    <div>Titre</div>
+</div>

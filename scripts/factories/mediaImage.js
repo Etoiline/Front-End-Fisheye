@@ -28,6 +28,7 @@ class MediaImage {
     const pTitle = document.createElement('p')
     pTitle.textContent = this.title
     const divLike = document.createElement('div')
+    divLike.setAttribute('class', 'likes')
     const pLike = document.createElement('p')
     pLike.textContent = this.likes
     const iHeart = document.createElement('i')

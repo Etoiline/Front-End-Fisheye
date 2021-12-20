@@ -48,7 +48,7 @@ function triMediaTitre (){
         return 0;
       });
       displayMedias(sortedMedias);
-      console.table(sortedMedias);
+      //console.table(sortedMedias);
 }
 
 function triMedaiDate(){
@@ -77,7 +77,7 @@ function triMedia(tri){
         sortedMedias=triMedaiDate();
         
     }
-    console.table(sortedMedias);
+    //console.table(sortedMedias);
     
 
 }
@@ -103,7 +103,7 @@ async function displayMedias (sortedMedias) {
         div_media.appendChild(mediaFigureHTML);
 
     });
-    console.log(tableauMedia);
+    //console.log(tableauMedia);
     
 /*
     tableauMedia.forEach((mediaTri) => {
@@ -167,10 +167,24 @@ function select (){
 }
 
 
+//click sur le coeur pour ajouter un j'aime
+function heart(){
+    const likes = document.getElementsByClassName('likes')
+    console.log('likes',likes)
+
+    let media = document.getElementsByClassName('photograph-media__photos')[0];
+    media.addEventListener('click', (e) => {
+        if (e.target.classList.contains('fa-heart')){
+            let pLike = e.target.parentNode.firstElementChild;
+            let nbLike = pLike.innerText
+            pLike.innerHTML = parseInt(nbLike)+1
+        }
+    })
+
+}
 
 async function init(){
     //Partie description du photographe
-    //var tri = '';
     dataPhotographer = await returnDataPhotographer();
     const ClassPhotographer = new Photographer (dataPhotographer);
     ClassPhotographer.photographerPage();
@@ -184,6 +198,7 @@ async function init(){
     await returnMediaPhotographer();
     photographerFirstName = ClassPhotographer.name.split(' ')[0];
     triMediaPopularite();
+    heart();
 
 }
 
