@@ -53,7 +53,7 @@ function validate (event) {
   event.preventDefault()
   const modal = document.getElementById('contact_modal')
   if (checkPrenomResult && checkNomResult && checkMailResult && checkMessageResult) {
-    console.log('message envoyé : ', modalMessage.value)
+    console.log('message envoyé : ', [modalName.value, modalLastName.value, modalMail.value, modalMessage.value])
     event.target.reset()
     modalReset()
     modal.style.display = 'none'
@@ -124,12 +124,12 @@ function checkMail (event) {
   return checkMailResult
 }
 
-// contrôler le champ mail
+// contrôler le champ message
 modalMessage.addEventListener('input', checkMessage)
 
 let checkMessageResult = false
 function checkMessage (event) {
-  console.log(modalMessage.value)
+  //console.log(modalMessage.value)
   if (modalMessage.value === '') {
     modalMessageDiv.setAttribute('data-error-visible', 'true')
     modalMessageDiv.setAttribute('data-error', 'Entrer un message')
