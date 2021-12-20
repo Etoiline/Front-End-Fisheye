@@ -167,6 +167,13 @@ function select (){
 }
 
 
+function updateBoxLikesAndPrice(){
+    let pLike = document.getElementsByClassName('boxLikesAndPrice__likes')
+    let nbLike = pLike[0].textContent
+    pLike[0].textContent = '\u00a0'+(parseInt(nbLike)+1)
+
+}
+
 //click sur le coeur pour ajouter un j'aime
 function heart(){
     const likes = document.getElementsByClassName('likes')
@@ -178,8 +185,29 @@ function heart(){
             let pLike = e.target.parentNode.firstElementChild;
             let nbLike = pLike.innerText
             pLike.innerHTML = parseInt(nbLike)+1
+            updateBoxLikesAndPrice()
         }
     })
+    
+}
+
+
+
+function displayBoxLikesAndPrice() {
+    const price = dataPhotographer.price
+    let totalLike = 0
+    const iHeart = document.createElement('i')
+    iHeart.setAttribute('class', 'fas fa-heart')
+
+    medias.forEach(media => {
+        totalLike+=parseInt(media.likes)
+    })
+    let pLike = document.getElementsByClassName('boxLikesAndPrice__likes')
+    pLike[0].textContent = '\u00a0'+totalLike
+    let pPrice = document.getElementsByClassName('boxLikesAndPrice__price')
+    pPrice[0].textContent = price+'\u20ac/jour'
+
+    
 
 }
 
@@ -199,6 +227,7 @@ async function init(){
     photographerFirstName = ClassPhotographer.name.split(' ')[0];
     triMediaPopularite();
     heart();
+    displayBoxLikesAndPrice();
 
 }
 
