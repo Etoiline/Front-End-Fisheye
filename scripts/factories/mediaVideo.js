@@ -24,6 +24,7 @@ class MediaVideo {
     video.setAttribute('src', picture)
     video.setAttribute('controls', 'controls')
     video.setAttribute('alt', 'vidéo')
+    video.setAttribute('class', 'element_gallerie')
     a.appendChild(video)
     const figcaption = document.createElement('figcaption')
     const pTitle = document.createElement('p')

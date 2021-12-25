@@ -1,8 +1,8 @@
+/* eslint-disable no-undef */
 
-
-    /* async function getPhotographers() {
+/* async function getPhotographers() {
         // Penser à remplacer par les données récupérées dans le json
-        const datasPhotographers = await loadDatasPhotographers(); 
+        const datasPhotographers = await loadDatasPhotographers();
         console.log("donnees photographes ",datasPhotographers);
         /*const photographers = [
             {
@@ -26,28 +26,26 @@
         ]
         // et bien retourner le tableau photographers seulement une fois
         return ({
-            photographers: [...photographers, ...photographers, ...photographers]})*/
-       /* return datasPhotographers;
-    }*/
+            photographers: [...photographers, ...photographers, ...photographers]}) */
+/* return datasPhotographers;
+    } */
 
-    function displayData(datasPhotographers) {
-        const photographersSection = document.querySelector(".photographer_section");
+function displayData (datasPhotographers) {
+  const photographersSection = document.querySelector('.photographer_section')
 
-        datasPhotographers.forEach((photographer) => {
-            const ClassPhotographer = new Photographer (photographer);
-            console.log(ClassPhotographer);
-            const userCardDOM = ClassPhotographer.photographerFactory();
-            photographersSection.appendChild(userCardDOM);
-        });
-    };
+  datasPhotographers.forEach((photographer) => {
+    const ClassPhotographer = new Photographer(photographer)
+    console.log(ClassPhotographer)
+    const userCardDOM = ClassPhotographer.photographerFactory()
+    photographersSection.appendChild(userCardDOM)
+  })
+};
 
-    async function init() {
-        // Récupère les datas des photographes
-        const photographers = await loadDatasPhotographers();
-        console.table(photographers);
-        displayData(photographers);
-    };
-    
-    init();
-    
-    
+async function init () {
+  // Récupère les datas des photographes
+  const photographers = await loadDatasPhotographers()
+  console.table(photographers)
+  displayData(photographers)
+};
+
+init()

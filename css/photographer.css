@@ -174,7 +174,7 @@ form input {
     width: 300px;
     justify-content: space-between;
 }
-/* 
+
 #select-tri {
     background: #901c1c;
     color:white;
@@ -186,6 +186,7 @@ form input {
     height:40px;
 
 }
+/*
   #sort-wrapper {
     align-items: center;
     background: #901c1c;
@@ -214,7 +215,7 @@ form input {
 } */
 
 
-/* The container must be positioned relative: */
+/* The container must be positioned relative:
 .custom-select {
     position: relative;
     font-family: Arial;
@@ -223,14 +224,14 @@ form input {
   
   .custom-select select {
     display: none; /*hide original SELECT element: */
-  }
+  /* }
   
   .select-selected {
     background-color: DodgerBlue;
   }
-  
+   */
   /* Style the arrow inside the select element: */
-  .select-selected:after {
+  /* .select-selected:after {
     position: absolute;
     content: "";
     top: 14px;
@@ -239,42 +240,42 @@ form input {
     height: 0;
     border: 6px solid transparent;
     border-color: #fff transparent transparent transparent;
-  }
+  } */
   
   /* Point the arrow upwards when the select box is open (active): */
-  .select-selected.select-arrow-active:after {
+  /* .select-selected.select-arrow-active:after {
     border-color: transparent transparent #fff transparent;
     top: 7px;
-  }
+  } */
   
   /* style the items (options), including the selected item: */
-  .select-items div,.select-selected {
+  /* .select-items div,.select-selected {
     color: #ffffff;
     padding: 8px 16px;
     border: 1px solid transparent;
     border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
     cursor: pointer;
-  }
+  } */
   
   /* Style items (options): */
-  .select-items {
+  /* .select-items {
     position: absolute;
     background-color: DodgerBlue;
     top: 100%;
     left: 0;
     right: 0;
     z-index: 99;
-  }
+  } */ 
   
   /* Hide the items when the select box is closed: */
-  .select-hide {
+  /* .select-hide {
     display: none;
   }
   
   .select-items div:hover, .same-as-selected {
     background-color: rgba(0, 0, 0, 0.1);
   }
-
+ */
 
   .boxLikesAndPrice{
       background-color: #DB8876;
@@ -292,3 +293,111 @@ form input {
       display:flex;
     align-items: center;
   }
+
+
+
+/* LIGHTBOX */
+
+  
+  /* The Lightbox (background) */
+  .lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: white;
+  }
+  
+  /* Lightbox Content */
+  .lightbox-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    width: 100%;
+    max-width: 1200px;
+    margin-top:50px;
+  }
+  
+  /* The Close Button */
+  .close-lightbox{
+    color: #901c1c;
+    position: absolute;
+    top: 10px;
+    right: 120px;
+    font-size: 40px;
+  }
+  
+  .close-lightbox:hover,
+  .close-lightbox:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .figure_lightbox {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .figure_lightbox figcaption {
+    width:100%;
+    text-align: left;
+    margin-top: 8px;
+    color:#901c1c;
+}
+
+.mySlides{
+    width:800px;
+    margin: auto;
+}
+
+ .mySlides img {
+    height:500px;
+    width:100%;
+    object-fit: cover;
+
+  } 
+
+  .mySlides video {
+    height:500px;
+    width:100%;
+    object-fit: cover;
+  }
+  
+
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    color: #901c1c;
+    font-weight: bold;
+    font-size: 40px;
+    transition: 0.6s ease;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  /* Positionne le bouton next */
+  .next {
+    right: 120px;
+  }
+
+  /* Positionne le bouton prev */
+  .prev {
+      left: 120px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  

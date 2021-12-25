@@ -129,7 +129,7 @@ modalMessage.addEventListener('input', checkMessage)
 
 let checkMessageResult = false
 function checkMessage (event) {
-  //console.log(modalMessage.value)
+  // console.log(modalMessage.value)
   if (modalMessage.value === '') {
     modalMessageDiv.setAttribute('data-error-visible', 'true')
     modalMessageDiv.setAttribute('data-error', 'Entrer un message')

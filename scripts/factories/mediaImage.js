@@ -23,6 +23,7 @@ class MediaImage {
     const img = document.createElement('img')
     img.setAttribute('src', picture)
     img.setAttribute('alt', this.image)
+    img.setAttribute('class', 'element_gallerie')
     a.appendChild(img)
     const figcaption = document.createElement('figcaption')
     const pTitle = document.createElement('p')

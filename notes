@@ -42,3 +42,21 @@ Structure tri
     <div>Date</div>
     <div>Titre</div>
 </div>
+
+
+Structure lightbox
+<figure>
+    <img src="jpg" alt="img">
+    <figcaption>        
+        title
+    </figcaption>
+</figure>
+
+
+
+
+
+TODO : 
+penser à changer dans la classe mediaImage
+img.setAttribute('onclick', 'openModal();currentSlide(2)')
+====> 2 doit être le numéro de l'image
