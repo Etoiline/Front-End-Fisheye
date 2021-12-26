@@ -44,8 +44,6 @@ class Photographer {
     a.appendChild(h2)
     article.appendChild(figure)
     return article
-  //      }
-    //       return { name, picture, getUserCardDOM }
   }
 
   photographerPage () {

@@ -144,9 +144,6 @@ function updateBoxLikesAndPrice () {
 
 /* clic sur le coeur pour ajouter un j'aime */
 function heart () {
-  const likes = document.getElementsByClassName('likes')
-  console.log('likes', likes)
-
   const media = document.getElementsByClassName('photograph-media__photos')[0]
   media.addEventListener('click', (e) => {
     if (e.target.classList.contains('fa-heart')) {
@@ -177,10 +174,10 @@ function displayBoxLikesAndPrice () {
 function addIndexImg () {
   const divPhotosGallerie = document.getElementsByClassName('photograph-media__photos')
   const figuresGallerie = divPhotosGallerie[0].childNodes
-  console.log('test', figuresGallerie)
   figuresGallerie.forEach((figureGallerie, index) => {
     const imageGallerie = figureGallerie.getElementsByClassName('element_gallerie')
     imageGallerie[0].setAttribute('onclick', 'openModal(' + index + ')')
+    imageGallerie[0].setAttribute('tabindex', index)
   })
 }
 

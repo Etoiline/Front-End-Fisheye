@@ -34,6 +34,7 @@ class MediaImage {
     pLike.textContent = this.likes
     const iHeart = document.createElement('i')
     iHeart.setAttribute('class', 'fas fa-heart')
+    iHeart.setAttribute('aria-label', 'likes')
     divLike.appendChild(pLike)
     divLike.appendChild(iHeart)
     figcaption.appendChild(pTitle)
