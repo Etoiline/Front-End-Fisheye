@@ -28,20 +28,13 @@ Structure medias :
         <p>title</p>
         <div>
             <p>nb_like</p>
-            <i>logo_heart</i>
+            <a>
+                <i>logo_heart</i>
+            </a>
         </div>
     </figcaption>
 </figure>
 
-
-
-
-Structure tri
-<div class="select-selected">popularite</div>
-<div class="select-items select-hide">
-    <div>Date</div>
-    <div>Titre</div>
-</div>
 
 
 Structure lightbox
@@ -51,12 +44,3 @@ Structure lightbox
         title
     </figcaption>
 </figure>
-
-
-
-
-
-TODO : 
-penser à changer dans la classe mediaImage
-img.setAttribute('onclick', 'openModal();currentSlide(2)')
-====> 2 doit être le numéro de l'image

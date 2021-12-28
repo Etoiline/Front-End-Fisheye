@@ -31,10 +31,21 @@ function modalReset () {
 function displayModal () {
   const modal = document.getElementById('contact_modal')
   modal.style.display = 'block'
+  modalName.focus()
 }
 
+const closeForm = document.getElementById('lienFormulaire')
+closeForm.addEventListener('click', closeModal)
+
+const formulaire = document.getElementById('contact_modal')
+formulaire.addEventListener('keydown', (e) => {
+  if (e.keyCode === 27) {
+    closeModal()
+  }
+})
+
 /* ferme le formulaire */
-function closeModal (event) {
+function closeModal () {
   const modal = document.getElementById('contact_modal')
   const form = document.getElementById('contact_form')
   modalReset()

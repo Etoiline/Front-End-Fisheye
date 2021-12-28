@@ -17,7 +17,7 @@
     <main id="main">
       <div class="photograph-header">
         <div class="photograph-header_presentation">
-          <h2 id="identity_photographer"></h2>
+          <h2 id="identity_photographer">Name</h2>
           <div>
             <p id="location_photographer" class="p_city"></p>
             <p id="tag_photographer"></p>
@@ -73,16 +73,17 @@
 
 
     </main>
+    <!-- Formulaire de contact -->
     <div id="contact_modal">
 			<div class="modal">
 				<header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" alt="close_icon" onclick="closeModal()" />
+          <a href="#" id='lienFormulaire'><img src="assets/icons/close.svg" class='formData' alt="close_icon"  /></a>
         </header>
 				<form id="contact_form" name="contact_form" action='index.html' method='get' onsubmit="return validate(event);" >
 					<div class='formData'>
 						<label for="first">Prénom</label><br>
-                <input class="text-control" type="text" id="first" name="first"/><br>
+                <input autofocus class="text-control" type="text" id="first" name="first"/><br>
 					</div>
           <div class="formData">
             <label for="last">Nom</label><br>

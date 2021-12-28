@@ -144,15 +144,41 @@ function updateBoxLikesAndPrice () {
 
 /* clic sur le coeur pour ajouter un j'aime */
 function heart () {
-  const media = document.getElementsByClassName('photograph-media__photos')[0]
-  media.addEventListener('click', (e) => {
-    if (e.target.classList.contains('fa-heart')) {
-      const pLike = e.target.parentNode.firstElementChild
+  const hearts = document.getElementsByClassName('likeHeart')
+  Array.from(hearts).forEach((heart) => {
+    heart.addEventListener('click', (e) => {
+      const pLike = heart.parentNode.firstElementChild
       const nbLike = pLike.innerText
       pLike.innerHTML = parseInt(nbLike) + 1
       updateBoxLikesAndPrice()
-    }
+    })
   })
+}
+// function heart () {
+//   const media = document.getElementsByClassName('photograph-media__photos')[0]
+//   media.addEventListener('click', (e) => {
+//     if (e.target.classList.contains('fa-heart')) {
+//       const pLike = e.target.parentNode.firstElementChild
+//       const nbLike = pLike.innerText
+//       pLike.innerHTML = parseInt(nbLike) + 1
+//       updateBoxLikesAndPrice()
+//     }
+//   })
+//   //media.addEventListener('focus', heartKeyboard())
+//   media.addEventListener('focus', (e) => {
+//     console.log('focusmedia')
+//   })
+// }
+
+function heartKeyboard (event) {
+  console.log('focus')
+  if (event.target.classList.contains('fa-heart') /*&& (e.keyCode === 13)*/) {
+    console.log('enter heart')
+    const pLike = e.target.parentNode.firstElementChild
+    const nbLike = pLike.innerText
+    pLike.innerHTML = parseInt(nbLike) + 1
+    updateBoxLikesAndPrice()
+  }
 }
 
 /* Affiche la boite total like et prix */
@@ -177,7 +203,7 @@ function addIndexImg () {
   figuresGallerie.forEach((figureGallerie, index) => {
     const imageGallerie = figureGallerie.getElementsByClassName('element_gallerie')
     imageGallerie[0].setAttribute('onclick', 'openModal(' + index + ')')
-    imageGallerie[0].setAttribute('tabindex', index)
+    imageGallerie[0].setAttribute('onKeyPress', 'if (event.keyCode == 13) openModal(' + index + ')')
   })
 }
 
