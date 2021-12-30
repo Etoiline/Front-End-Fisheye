@@ -19,7 +19,6 @@ class MediaVideo {
     const picture = `assets/Sample_Photos/${this.photographerFirstName}/${this.video}`
     const figure = document.createElement('figure')
     const a = document.createElement('a')
-    // a.href=ouvrir l'image dans la lightbox
     const video = document.createElement('video')
     video.setAttribute('src', picture)
     video.setAttribute('controls', 'controls')
@@ -34,9 +33,14 @@ class MediaVideo {
     const pLike = document.createElement('p')
     pLike.textContent = this.likes
     const iHeart = document.createElement('i')
+    const aLike = document.createElement('a')
+    aLike.setAttribute('class', 'likeHeart')
+    aLike.setAttribute('href', 'javascript:void(0)')
     iHeart.setAttribute('class', 'fas fa-heart')
+    iHeart.setAttribute('aria-label', 'likes')
+    aLike.appendChild(iHeart)
     divLike.appendChild(pLike)
-    divLike.appendChild(iHeart)
+    divLike.appendChild(aLike)
     figcaption.appendChild(pTitle)
     figcaption.appendChild(divLike)
     figure.appendChild(a)

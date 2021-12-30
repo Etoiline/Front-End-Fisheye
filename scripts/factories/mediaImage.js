@@ -19,7 +19,6 @@ class MediaImage {
     const picture = `assets/Sample_Photos/${this.photographerFirstName}/${this.image}`
     const figure = document.createElement('figure')
     const a = document.createElement('a')
-    // a.href=ouvrir l'image dans la lightbox
     const img = document.createElement('img')
     img.setAttribute('src', picture)
     img.setAttribute('alt', this.image)
@@ -36,14 +35,12 @@ class MediaImage {
     const iHeart = document.createElement('i')
     const aLike = document.createElement('a')
     aLike.setAttribute('class', 'likeHeart')
-    aLike.setAttribute('tabindex', 0)
+    aLike.setAttribute('href', 'javascript:void(0)')
     iHeart.setAttribute('class', 'fas fa-heart')
     iHeart.setAttribute('aria-label', 'likes')
-    // iHeart.setAttribute('tabindex', 0)
     aLike.appendChild(iHeart)
     divLike.appendChild(pLike)
     divLike.appendChild(aLike)
-    // divLike.appendChild(iHeart)
     figcaption.appendChild(pTitle)
     figcaption.appendChild(divLike)
     figure.appendChild(a)

@@ -144,19 +144,13 @@ function updateBoxLikesAndPrice () {
 
 /* clic sur le coeur pour ajouter un j'aime */
 function heart () {
-  const hearts = document.getElementsByClassName('fa-heart')
+  const hearts = document.getElementsByClassName('likeHeart')
   Array.from(hearts).forEach((heart) => {
     heart.addEventListener('click', (e) => {
-      const pLike = heart.parentNode.parentNode.firstElementChild
+      const pLike = heart.parentNode.firstElementChild
       const nbLike = pLike.innerText
       pLike.innerHTML = parseInt(nbLike) + 1
       updateBoxLikesAndPrice()
-    })
-    heart.addEventListener('focusin', (e) => {
-      console.log('okkkkkk')
-      if (e.KeyCode === 13) {
-        console.log('okkkkkk')
-      }
     })
   })
 }
