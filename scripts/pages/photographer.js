@@ -144,13 +144,19 @@ function updateBoxLikesAndPrice () {
 
 /* clic sur le coeur pour ajouter un j'aime */
 function heart () {
-  const hearts = document.getElementsByClassName('likeHeart')
+  const hearts = document.getElementsByClassName('fa-heart')
   Array.from(hearts).forEach((heart) => {
     heart.addEventListener('click', (e) => {
-      const pLike = heart.parentNode.firstElementChild
+      const pLike = heart.parentNode.parentNode.firstElementChild
       const nbLike = pLike.innerText
       pLike.innerHTML = parseInt(nbLike) + 1
       updateBoxLikesAndPrice()
+    })
+    heart.addEventListener('focusin', (e) => {
+      console.log('okkkkkk')
+      if (e.KeyCode === 13) {
+        console.log('okkkkkk')
+      }
     })
   })
 }
@@ -235,12 +241,18 @@ function createLightbox () {
   })
 
   // ajout des flèches
-  const aPrev = document.createElement('i')
-  aPrev.setAttribute('class', 'prev fas fa-chevron-left')
-  aPrev.setAttribute('onclick', 'prevSlide()')
-  const aNext = document.createElement('i')
-  aNext.setAttribute('class', 'next fas fa-chevron-right')
-  aNext.setAttribute('onclick', 'nextSlide()')
+  const aPrev = document.createElement('a')
+  const iPrev = document.createElement('i')
+  iPrev.setAttribute('class', 'fas fa-chevron-left')
+  aPrev.appendChild(iPrev)
+  aPrev.setAttribute('class', 'prev')
+  aPrev.setAttribute('href', '#')
+  const aNext = document.createElement('a')
+  const iNext = document.createElement('i')
+  iNext.setAttribute('class', 'fas fa-chevron-right')
+  aNext.appendChild(iNext)
+  aNext.setAttribute('class', 'next')
+  aNext.setAttribute('href', '#')
   divSlides[0].appendChild(aPrev)
   divSlides[0].appendChild(aNext)
 }
