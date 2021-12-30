@@ -39,6 +39,6 @@ const loadMediaPhotographers = async () => {
 // retourne les medias d'un photographe (id en paramètre)
 const loadMediaPhotographer = async (id) => {
   const datas = await loadMediaPhotographers()
-  const photographerMedia = datas.filter(function (mediaPhotographerId) { return mediaPhotographerId.photographerId == id })
+  const photographerMedia = datas.filter(function (mediaPhotographerId) { return mediaPhotographerId.photographerId === id })
   return photographerMedia
 }

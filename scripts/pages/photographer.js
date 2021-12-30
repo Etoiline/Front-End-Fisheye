@@ -8,6 +8,7 @@ const mediasObject = [] // tableau contenant les objets media
 
 async function returnDataPhotographer () {
   const photographer = await loadDataPhotographer(id)
+  console.log('photo', photographer)
   return photographer
 }
 
@@ -85,48 +86,6 @@ async function displayMedias (sortedMedias) {
   })
 }
 
-/* Déroule le menu pour choisir le tri */
-// function dropDown() {
-//     const arrowOpen = document.getElementsByClassName('arrow-open');
-//     const arrowClose = document.getElementsByClassName('arrow-close');
-//     const menuTri = document.getElementsByClassName('menu-tri');
-
-//     if (arrowOpen) {
-//         arrowOpen[0].addEventListener('click', () => {
-//             menuTri[0].style.display = 'block';
-//         });
-//     }
-//     if (arrowClose) {
-//         arrowClose[0].addEventListener('click', () => {
-//             menuTri[0].style.display = "none";
-//         });
-//     }
-// }
-
-/* Récupère le choix de tri de l'utilisateur */
-/* function parametreTri() {
-    const popularity = document.getElementsByClassName('popularity-sort');
-    const date = document.getElementsByClassName('date-sort');
-    const title = document.getElementsByClassName('title-sort');
-    var sortParam = 'popularity';
-    popularity[0].addEventListener('click', () => {
-        sortParam = 'popularity';
-        return sortParam;
-    });
-    date[0].addEventListener('click', (sortParam) => {
-        sortParam = 'date';
-        console.log('tri date', sortParam);
-        return sortParam;
-
-    });
-    title[0].addEventListener('click', () => {
-        sortParam = 'title';
-        return sortParam;
-    });
-    console.log('tri retour', sortParam);
-    return sortParam;
-} */
-
 function select () {
   const select = document.getElementById('select-tri')
   select.addEventListener('change', (e) => {
@@ -153,32 +112,6 @@ function heart () {
       updateBoxLikesAndPrice()
     })
   })
-}
-// function heart () {
-//   const media = document.getElementsByClassName('photograph-media__photos')[0]
-//   media.addEventListener('click', (e) => {
-//     if (e.target.classList.contains('fa-heart')) {
-//       const pLike = e.target.parentNode.firstElementChild
-//       const nbLike = pLike.innerText
-//       pLike.innerHTML = parseInt(nbLike) + 1
-//       updateBoxLikesAndPrice()
-//     }
-//   })
-//   //media.addEventListener('focus', heartKeyboard())
-//   media.addEventListener('focus', (e) => {
-//     console.log('focusmedia')
-//   })
-// }
-
-function heartKeyboard (event) {
-  console.log('focus')
-  if (event.target.classList.contains('fa-heart') /*&& (e.keyCode === 13)*/) {
-    console.log('enter heart')
-    const pLike = e.target.parentNode.firstElementChild
-    const nbLike = pLike.innerText
-    pLike.innerHTML = parseInt(nbLike) + 1
-    updateBoxLikesAndPrice()
-  }
 }
 
 /* Affiche la boite total like et prix */

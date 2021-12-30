@@ -1,3 +1,7 @@
+dataProvider : 
+L28 => le triple '=' ne fonctionne pas 
+
+
 structure carte photographe :
 
 <article>
