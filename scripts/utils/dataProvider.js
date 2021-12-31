@@ -1,6 +1,6 @@
 /* recupérer les données du fichier json et retourner les données sélectionnées */
 
-const urlDataPhotographers = 'data/photographers.json'
+const urlDataPhotographers = '../data/photographers.json'
 
 // retourne le contenu du fichier json
 const fetchData = async (urlDataPhotographers) => {
@@ -8,6 +8,7 @@ const fetchData = async (urlDataPhotographers) => {
   try {
     console.log('try')
     const response = await fetch(urlDataPhotographers)
+    console.log('response', response)
     dataPhotographers = await response.json()
     console.log('data photo', dataPhotographers)
   } catch (error) {
