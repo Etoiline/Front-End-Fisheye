@@ -1,6 +1,6 @@
 /* recupérer les données du fichier json et retourner les données sélectionnées */
 
-const urlDataPhotographers = '../data/photographers.json'
+const urlDataPhotographers = 'data/photographers.json'
 
 // retourne le contenu du fichier json
 const fetchData = async (urlDataPhotographers) => {
