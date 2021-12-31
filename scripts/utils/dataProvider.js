@@ -6,12 +6,8 @@ const urlDataPhotographers = './data/photographers.json'
 const fetchData = async (urlDataPhotographers) => {
   let dataPhotographers = null
   try {
-    console.log('je suis là : ', document.URL)
-    console.log('try')
     const response = await fetch(urlDataPhotographers)
-    console.log('response', response)
     dataPhotographers = await response.json()
-    console.log('data photo', dataPhotographers)
   } catch (error) {
     console.log(error)
   } finally {
