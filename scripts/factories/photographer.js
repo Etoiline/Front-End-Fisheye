@@ -24,7 +24,7 @@ class Photographer {
     const figure = document.createElement('figure')
     const figcaption = document.createElement('figcaption')
     img.setAttribute('src', picture)
-    img.setAttribute('alt', 'profil artiste')
+    img.setAttribute('alt', '')
     const h2 = document.createElement('h2')
     h2.textContent = this.name
     const pCity = document.createElement('p')

@@ -21,7 +21,7 @@ class MediaImage {
     const a = document.createElement('a')
     const img = document.createElement('img')
     img.setAttribute('src', picture)
-    img.setAttribute('alt', this.image)
+    img.setAttribute('alt', this.title)
     img.setAttribute('class', 'element_gallerie')
     img.setAttribute('tabindex', 0)
     a.appendChild(img)

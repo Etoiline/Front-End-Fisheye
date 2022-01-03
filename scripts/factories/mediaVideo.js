@@ -22,7 +22,7 @@ class MediaVideo {
     const video = document.createElement('video')
     video.setAttribute('src', picture)
     video.setAttribute('controls', 'controls')
-    video.setAttribute('alt', 'vidéo')
+    video.setAttribute('alt', this.title)
     video.setAttribute('class', 'element_gallerie')
     a.appendChild(video)
     const figcaption = document.createElement('figcaption')
