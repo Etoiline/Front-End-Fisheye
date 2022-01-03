@@ -19,11 +19,12 @@ class MediaVideo {
     const picture = `assets/Sample_Photos/${this.photographerFirstName}/${this.video}`
     const figure = document.createElement('figure')
     const a = document.createElement('a')
+    a.setAttribute('href', 'javascript:void(0)')
     const video = document.createElement('video')
     video.setAttribute('src', picture)
     video.setAttribute('controls', 'controls')
     video.setAttribute('alt', this.title)
-    video.setAttribute('class', 'element_gallerie')
+    a.setAttribute('class', 'element_gallerie')
     a.appendChild(video)
     const figcaption = document.createElement('figcaption')
     const pTitle = document.createElement('p')
