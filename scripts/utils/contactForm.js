@@ -39,7 +39,7 @@ closeForm.addEventListener('click', closeModal)
 
 const formulaire = document.getElementById('contact_modal')
 formulaire.addEventListener('keydown', (e) => {
-  if (e.keyCode === 27) {
+  if (e.key === 'Escape') {
     closeModal()
   }
 })

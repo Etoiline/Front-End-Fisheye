@@ -29,6 +29,7 @@ class MediaImage {
     const figcaption = document.createElement('figcaption')
     const pTitle = document.createElement('p')
     pTitle.textContent = this.title
+    pTitle.setAttribute('aria-hidden', 'true')
     const divLike = document.createElement('div')
     divLike.setAttribute('class', 'likes')
     const pLike = document.createElement('p')
@@ -38,7 +39,7 @@ class MediaImage {
     aLike.setAttribute('class', 'likeHeart')
     aLike.setAttribute('href', 'javascript:void(0)')
     iHeart.setAttribute('class', 'fas fa-heart')
-    iHeart.setAttribute('aria-label', 'likes')
+    aLike.setAttribute('aria-label', 'likes')
     aLike.appendChild(iHeart)
     divLike.appendChild(pLike)
     divLike.appendChild(aLike)

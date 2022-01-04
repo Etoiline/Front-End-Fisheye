@@ -52,7 +52,6 @@ function nextSlideListener () {
 }
 
 function navKeyboardListener () {
-  const lightbox = document.getElementById('myLightbox')
   const testFocus = document.getElementsByClassName('lightbox-content')
   testFocus[0].focus()
   testFocus[0].addEventListener('keydown', (e) => {

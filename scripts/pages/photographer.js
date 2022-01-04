@@ -89,7 +89,7 @@ async function displayMedias (sortedMedias) {
 function select () {
   const select = document.getElementById('select-tri')
   select.addEventListener('change', (e) => {
-    console.log(e.target.value)
+    // console.log(e.target.value)
     triMedia(e.target.value)
   })
 }
@@ -174,12 +174,14 @@ function createLightbox () {
   aPrev.appendChild(iPrev)
   aPrev.setAttribute('class', 'prev')
   aPrev.setAttribute('href', '#')
+  aPrev.setAttribute('aria-label', 'media précédent')
   const aNext = document.createElement('a')
   const iNext = document.createElement('i')
   iNext.setAttribute('class', 'fas fa-chevron-right')
   aNext.appendChild(iNext)
   aNext.setAttribute('class', 'next')
   aNext.setAttribute('href', '#')
+  aNext.setAttribute('aria-label', 'media suivant')
   divSlides[0].appendChild(aPrev)
   divSlides[0].appendChild(aNext)
 }
