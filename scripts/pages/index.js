@@ -1,38 +1,11 @@
 /* eslint-disable no-undef */
 
-/* async function getPhotographers() {
-        // Penser à remplacer par les données récupérées dans le json
-        const datasPhotographers = await loadDatasPhotographers();
-        console.log("donnees photographes ",datasPhotographers);
-        /*const photographers = [
-            {
-                "name": "Ma data test",
-                "id": 1,
-                "city": "Paris",
-                "country": "France",
-                "tagline": "Ceci est ma data test",
-                "price": 400,
-                "portrait": "account.png"
-            },
-            {
-                "name": "Autre data test",
-                "id": 2,
-                "city": "Londres",
-                "country": "UK",
-                "tagline": "Ceci est ma data test 2",
-                "price": 500,
-                "portrait": "account.png"
-            },
-        ]
-        // et bien retourner le tableau photographers seulement une fois
-        return ({
-            photographers: [...photographers, ...photographers, ...photographers]}) */
-/* return datasPhotographers;
-    } */
-
+/**
+ * Fonction qui affiche les vignettes de chaque photographe
+ * @param {données mises en page dans la classe photographe} datasPhotographers
+ */
 function displayData (datasPhotographers) {
   const photographersSection = document.querySelector('.photographer_section')
-
   datasPhotographers.forEach((photographer) => {
     const ClassPhotographer = new Photographer(photographer)
     console.log(ClassPhotographer)
@@ -41,10 +14,13 @@ function displayData (datasPhotographers) {
   })
 };
 
+/**
+ * fonction à lancer à l'ouverture de la page
+ */
 async function init () {
   // Récupère les datas des photographes
   const photographers = await loadDatasPhotographers()
-  console.table(photographers)
+  // console.table(photographers)
   displayData(photographers)
 };
 

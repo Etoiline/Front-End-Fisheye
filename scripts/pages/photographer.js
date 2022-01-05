@@ -1,17 +1,23 @@
 /* eslint-disable no-undef */
 const urlSearchParam = new URLSearchParams(window.location.search)
-const id = urlSearchParam.get('id')
+const id = urlSearchParam.get('id') // id du photographe
 let medias = [] // tableau contenant les medias
-let dataPhotographer = null
+let dataPhotographer = null // les données d'un photographe
 let photographerFirstName = null // nom du photographe (pour le dossier des images)
 const mediasObject = [] // tableau contenant les objets media
 
+/**
+ * @returns les données d'un photographe (id)
+ */
 async function returnDataPhotographer () {
   const photographer = await loadDataPhotographer(id)
-  console.log('photo', photographer)
+  // console.log('photo', photographer)
   return photographer
 }
 
+/**
+ * crée un tableau avec l'enemble des medias sous forme d'objet
+ */
 async function returnMediaPhotographer () {
   medias = await loadMediaPhotographer(id)
   medias.forEach((media) => {
@@ -86,6 +92,9 @@ async function displayMedias (sortedMedias) {
   })
 }
 
+/**
+ * récupère le choix de l'utilisateur
+ */
 function select () {
   const select = document.getElementById('select-tri')
   select.addEventListener('change', (e) => {
@@ -136,7 +145,7 @@ function addIndexImg () {
   figuresGallerie.forEach((figureGallerie, index) => {
     const imageGallerie = figureGallerie.getElementsByClassName('element_gallerie')
     imageGallerie[0].setAttribute('onclick', 'openModal(' + index + ')')
-    imageGallerie[0].setAttribute('onKeyPress', 'if (event.keyCode == 13) openModal(' + index + ')')
+    // imageGallerie[0].setAttribute('onKeyPress', 'if (event.keyCode == 13) openModal(' + index + ')')
   })
 }
 
@@ -186,6 +195,9 @@ function createLightbox () {
   divSlides[0].appendChild(aNext)
 }
 
+/**
+ * fonction créant la page
+ */
 async function init () {
   // Partie description du photographe
   dataPhotographer = await returnDataPhotographer()
@@ -202,6 +214,6 @@ async function init () {
   createLightbox()
 }
 
-console.log(id)
+// console.log(id)
 init()
 select()

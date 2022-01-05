@@ -38,7 +38,7 @@ class MediaVideo {
     aLike.setAttribute('class', 'likeHeart')
     aLike.setAttribute('href', 'javascript:void(0)')
     iHeart.setAttribute('class', 'fas fa-heart')
-    iHeart.setAttribute('aria-label', 'likes')
+    aLike.setAttribute('aria-label', 'likes')
     aLike.appendChild(iHeart)
     divLike.appendChild(pLike)
     divLike.appendChild(aLike)

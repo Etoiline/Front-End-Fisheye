@@ -33,19 +33,6 @@
 }
 
 
-  .bground-validation {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    overflow: auto;
-  
-  }
-
-
 .photograph-media__tri {
     display: flex;
     align-items: center;
@@ -76,6 +63,7 @@
       position : fixed;
       bottom:0;
       right:40px;
+      border-radius: 5px;
   }
 
 

@@ -15,8 +15,6 @@ class Photographer {
      */
   photographerFactory () {
     const picture = `assets/Sample_Photos/Photographers_ID_Photos/${this.portrait}`
-
-    // function getUserCardDOM() {
     const article = document.createElement('article')
     const img = document.createElement('img')
     const a = document.createElement('a')
@@ -46,6 +44,9 @@ class Photographer {
     return article
   }
 
+  /**
+     * crée et retourne l'introduction de chaque phoytographe (page photographe)
+     */
   photographerPage () {
     const h2Photo = document.getElementById('identity_photographer')
     h2Photo.textContent = this.name

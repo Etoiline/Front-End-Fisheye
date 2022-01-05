@@ -122,3 +122,16 @@ form input {
   cursor: pointer;
   transform: scale(0.7);
 }
+
+
+.bground-validation {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+
+}
