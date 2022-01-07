@@ -98,7 +98,6 @@ async function displayMedias (sortedMedias) {
 function select () {
   const select = document.getElementById('select-tri')
   select.addEventListener('change', (e) => {
-    // console.log(e.target.value)
     triMedia(e.target.value)
   })
 }
@@ -214,6 +213,5 @@ async function init () {
   createLightbox()
 }
 
-// console.log(id)
 init()
 select()
